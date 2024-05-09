@@ -1,0 +1,14 @@
+<div class="booking-details">
+    <h2>Booking Details</h2>
+    <div *ngIf="bookingDetails && bookingDetails.length > 0">
+        <p><strong>ID:</strong> {{ bookingDetails[0].id }}</p>
+        <p><strong>Room ID:</strong> {{ bookingDetails[0].roomId }}</p>
+        <p><strong>Session ID:</strong> {{ bookingDetails[0].sessionId }}</p>
+        <p><strong>Date:</strong> {{ bookingDetails[0].date }}</p>
+        <p><strong>Time Slot:</strong> {{ bookingDetails[0].timeSlot }}</p>
+        <p><strong>Booked By:</strong> {{ bookingDetails[0].bookedBy }}</p>
+    </div>
+    <div *ngIf="!bookingDetails || bookingDetails.length === 0">
+        <p>No booking details found</p>
+    </div>
+</div>

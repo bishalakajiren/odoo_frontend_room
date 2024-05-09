@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="calendar">
+      <h2>Choose Date:</h2>
+      <div class="calendar-widget">
+        <!-- You can use any calendar library you prefer, for simplicity let's use a basic HTML5 date input -->
+        <input type="date" [(ngModel)]="selectedDate" class="form-control">
+      </div>
+    </div>
+    <div class="time-slots">
+      <h2>Choose Time Slot:</h2>
+      <div class="time-slots-widget">
+        <button *ngFor="let timeslot of timeslots" class="btn btn-outline-primary" (click)="selectTimeslot(timeslot)">{{ timeslot }}</button>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="bookRoom()">Book Room</button>
+  </div>
+  

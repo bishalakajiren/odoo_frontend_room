@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .calendar,
+  .time-slots {
+    margin-bottom: 20px;
+  }
+  
+  .time-slots-widget {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .time-slots-widget .btn {
+    margin: 5px;
+  }
+  
+  /* Adjust Mat-Datepicker */
+  .mat-datepicker-toggle {
+    position: relative;
+    top: 6px; /* Adjust vertical alignment */
+  }
+  
+  .mat-form-field {
+    width: 300px; /* Adjust width if needed */
+  }
+  

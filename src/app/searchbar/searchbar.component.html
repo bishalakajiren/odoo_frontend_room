@@ -1,0 +1,28 @@
+<div class="search-container">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="search-form">
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" id="location" formControlName="location" class="form-control" placeholder="Search by location">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+
+<div class="room-list">
+  <div *ngIf="rooms && rooms.length > 0; else noRooms">
+    <h2>Rooms</h2>
+    <div class="card-container">
+      <div class="card" *ngFor="let room of rooms" [routerLink]="['/app-view', room.id,getSessionId(), getBookedBy()]">
+        <div class="card-header">{{ room.name }}</div>
+        <div class="card-body">
+          <p><strong>Location:</strong> {{ room.location }}</p>
+          <p><strong>Capacity:</strong> {{ room.capacity }}</p>
+          <p><strong>Description:</strong> {{ room.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noRooms>
+    <p>No rooms found</p>
+  </ng-template>
+</div>
